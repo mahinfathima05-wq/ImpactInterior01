@@ -1,0 +1,15 @@
+# BigRock / cPanel Apache static site compatibility
+
+# Default document
+DirectoryIndex index.html index.htm
+
+# Disable directory browsing
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve the admin login page when visiting /admin or /admin/
+  RewriteRule ^admin/?$ /admin/login.html [L]
+</IfModule>

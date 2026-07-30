@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Interior Design | Admin Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon"><i class="fa-solid fa-house"></i></div>
+                <div>
+                    <h2>Impact</h2>
+                    <p>Admin Panel</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a class="active" href="#"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+                <a href="#"><i class="fa-solid fa-images"></i> Portfolio</a>
+                <a href="#"><i class="fa-solid fa-photo-film"></i> Gallery</a>
+                <a href="#"><i class="fa-solid fa-concierge-bell"></i> Services</a>
+                <a href="#"><i class="fa-solid fa-newspaper"></i> Blog</a>
+                <a href="#"><i class="fa-solid fa-envelope"></i> Messages</a>
+                <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a class="ghost-btn" href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-panel">
+            <header class="topbar">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+                <div>
+                    <p class="eyebrow">Interior Design Admin</p>
+                    <h1>Dashboard Overview</h1>
+                    <p id="today" class="subtext"></p>
+                </div>
+                <div class="topbar-actions">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <a class="primary-btn" href="#"><i class="fa-solid fa-plus"></i> New Project</a>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <article class="stat-card accent">
+                    <div class="stat-icon"><i class="fa-solid fa-images"></i></div>
+                    <div>
+                        <h3>24</h3>
+                        <p>Projects</p>
+                    </div>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <div>
+                        <h3 id="inquiry-count">0</h3>
+                        <p>New Inquiries</p>
+                    </div>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div>
+                        <h3>6</h3>
+                        <p>Active Clients</p>
+                    </div>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                    <div>
+                        <h3 id="subscriber-count">0</h3>
+                        <p>Subscribers</p>
+                    </div>
+                </article>
+                <article class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <div>
+                        <h3>9</h3>
+                        <p>Blog Posts</p>
+                    </div>
+                </article>
+            </section>
+
+            <section class="content-grid">
+                <div class="panel large-panel">
+                    <div class="panel-header">
+                        <h2>Manage Projects</h2>
+                        <a href="#" id="add-project-btn">+ Add Project</a>
+                    </div>
+                    <form id="project-form" class="admin-form">
+                        <input type="text" id="project-title" placeholder="Project Title" required>
+                        <input type="text" id="project-category" placeholder="Category" required>
+                        <input type="text" id="project-location" placeholder="Location" required>
+                        <button type="submit">Save Project</button>
+                    </form>
+                    <ul id="project-list" class="simple-list"></ul>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Quick Actions</h2>
+                    </div>
+                    <div class="actions-list">
+                        <a href="#" class="action-card"><i class="fa-solid fa-plus"></i> Add New Project</a>
+                        <a href="#" class="action-card"><i class="fa-solid fa-file-lines"></i> Create Blog Post</a>
+                        <a href="#" class="action-card"><i class="fa-solid fa-list-check"></i> Update Services</a>
+                        <a href="#" class="action-card"><i class="fa-solid fa-chart-line"></i> View Analytics</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-grid lower-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Manage Services</h2>
+                    </div>
+                    <form id="service-form" class="admin-form">
+                        <input type="text" id="service-name" placeholder="Service Name" required>
+                        <textarea id="service-desc" rows="3" placeholder="Service Description" required></textarea>
+                        <button type="submit">Save Service</button>
+                    </form>
+                    <ul id="service-list" class="simple-list"></ul>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Manage Blog Posts</h2>
+                    </div>
+                    <form id="blog-form" class="admin-form">
+                        <input type="text" id="blog-title" placeholder="Blog Title" required>
+                        <textarea id="blog-desc" rows="3" placeholder="Blog Summary" required></textarea>
+                        <button type="submit">Save Post</button>
+                    </form>
+                    <ul id="blog-list" class="simple-list"></ul>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Manage Gallery</h2>
+                        <a href="#" id="add-gallery-btn">+ Add Item</a>
+                    </div>
+                    <form id="gallery-form" class="admin-form">
+                        <input type="text" id="gallery-title" placeholder="Item Title" required>
+                        <select id="gallery-type">
+                            <option value="image">Image</option>
+                            <option value="video">Video</option>
+                        </select>
+                        <input type="file" id="gallery-file" accept="image/*,video/*">
+                        <input type="text" id="gallery-url" placeholder="Image or video URL / path">
+                        <p class="input-note">Choose a file or paste a URL/path. If both are provided, file upload takes priority.</p>
+                        <textarea id="gallery-desc" rows="3" placeholder="Description (optional)"></textarea>
+                        <button type="submit">Save Gallery Item</button>
+                    </form>
+                    <ul id="gallery-list" class="simple-list"></ul>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Consultation Requests</h2>
+                    </div>
+                    <div class="table-wrap">
+                    <table class="consultation-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Project Type</th>
+                                <th>Budget</th>
+                                <th>Requirements</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="consultation-list">
+                            <tr><td colspan="7"><em>Loading consultation requests…</em></td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Newsletter Subscribers</h2>
+                    </div>
+                    <ul id="subscriber-list" class="simple-list">
+                        <li><em>Loading subscribers…</em></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="../firebase-config.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

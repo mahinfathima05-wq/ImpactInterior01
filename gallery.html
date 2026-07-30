@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Impact Interior Design</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="page-layout">
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Impact Interiors</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="admin/dashboard.html">Admin</a></li>
+        </ul>
+        <a href="consultation.html" class="nav-btn">Book Consultation</a>
+    </nav>
+</header>
+
+<section class="page-hero">
+    <div class="page-hero-content">
+        <span class="section-title">GALLERY</span>
+        <h1>Project Photos & Videos</h1>
+        <p>Explore our latest interior design work through curated images and video walkthroughs.</p>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="gallery-grid">
+        <div class="gallery-card">
+            <img src="image/living-room.jpg" alt="Living room project">
+            <div class="gallery-label">Living Room Project</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/bedroom.jpg" alt="Bedroom project">
+            <div class="gallery-label">Bedroom Project</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/office.jpg" alt="Project walkthrough placeholder">
+            <div class="gallery-label">Project Walkthrough</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/kitchen.jpg" alt="Kitchen project">
+            <div class="gallery-label">Kitchen Project</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/living-room.jpg" alt="Commercial space project">
+            <div class="gallery-label">Commercial Space</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/hero.jpg" alt="Interior tour placeholder">
+            <div class="gallery-label">Interior Tour</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/gallery1.jpeg" alt="Gallery 1">
+            <div class="gallery-label">Gallery 1</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/gallery2.jpeg" alt="Gallery 2">
+            <div class="gallery-label">Gallery 2</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/gallery3.jpeg" alt="Gallery 3">
+            <div class="gallery-label">Gallery 3</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/gallery4.jpeg" alt="Gallery 4">
+            <div class="gallery-label">Gallery 4</div>
+        </div>
+        <div class="gallery-card">
+            <img src="image/gallery5.jpeg" alt="Gallery 5">
+            <div class="gallery-label">Gallery 5</div>
+        </div>
+    </div>
+</section>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+<script src="firebase-config.js"></script>
+<script src="gallery.js"></script>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h2 class="footer-logo">Impact <span>Interior Design</span></h2>
+            <p>Luxury interiors designed with creativity, precision, and lasting impact.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p><i class="fa-solid fa-phone"></i> <a href="tel:+919035790433">+91 90357 90433</a> / <a href="tel:+917019721773">+91 70197 21773</a></p>
+            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:impactinteriors04@gmail.com">impactinteriors04@gmail.com</a></p>
+            <p><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka</p>
+        </div>
+    </div>
+</footer>
+
+    <div class="floating-contact" aria-label="Floating contact buttons">
+        <a href="https://wa.me/919035790433" target="_blank" rel="noopener" class="contact-btn whatsapp" aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919035790433" class="contact-btn phone" aria-label="Call us">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

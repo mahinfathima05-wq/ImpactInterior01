@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Impact Interior Design</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+<body class="page-layout">
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Impact Interiors</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="admin/dashboard.html">Admin</a></li>
+        </ul>
+        <a href="consultation.html" class="nav-btn">Book Consultation</a>
+    </nav>
+</header>
+
+<section class="page-hero">
+    <div class="page-hero-content">
+        <span class="section-title">CONTACT US</span>
+        <h1>Let’s Design Your Dream Space</h1>
+        <p>We would love to hear about your project and help turn your ideas into a beautifully crafted interior.</p>
+    </div>
+</section>
+
+<section class="page-section">
+    <div class="page-grid">
+        <div class="page-card">
+            <i class="fa-solid fa-phone"></i>
+            <h3>Phone</h3>
+            <p><a href="tel:+919035790433">+91 90357 90433</a><br><a href="tel:+917019721773">+91 70197 21773</a></p>
+        </div>
+        <div class="page-card">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Email</h3>
+            <p><a href="mailto:impactinteriors04@gmail.com">impactinteriors04@gmail.com</a></p>
+        </div>
+        <div class="page-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3>Address</h3>
+            <p>Bengaluru, Karnataka, India</p>
+        </div>
+    </div>
+    <!-- Contact form -->
+    <div class="page-section">
+        <div class="page-grid contact-grid">
+            <div class="page-card contact-form-card">
+                <h3>Get In Touch</h3>
+                <form id="contactForm" class="contact-form" novalidate>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 70197 21773" />
+
+                    <label for="project">Project Type</label>
+                    <select id="project" name="project">
+                        <option value="General">General enquiry</option>
+                        <option value="Residential">Residential</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Renovation">Renovation</option>
+                    </select>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+
+                    <button type="submit" class="btn primary-btn">Send Request</button>
+                    <div id="contactSuccess" style="display:none;color:green;margin-top:10px;">Thank you! Your request is ready to send—your mail client should open.</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-cta">
+        <a href="mailto:impactinteriors04@gmail.com" class="btn primary-btn">Send an Email</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h2 class="footer-logo">Impact <span>Interior Design</span></h2>
+            <p>Luxury interiors designed with creativity, precision, and lasting impact.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p><i class="fa-solid fa-phone"></i> <a href="tel:+919035790433">+91 90357 90433</a> / <a href="tel:+917019721773">+91 70197 21773</a></p>
+            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:impactinteriors04@gmail.com">impactinteriors04@gmail.com</a></p>
+            <p><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('contactForm');
+        if (!form) return;
+
+        function saveLocally(data) {
+            try {
+                var saved = JSON.parse(localStorage.getItem('impactConsultations') || '[]');
+                saved.unshift(Object.assign({}, data, { createdAt: new Date().toISOString() }));
+                localStorage.setItem('impactConsultations', JSON.stringify(saved));
+            } catch (err) {
+                console.error('Local save failed:', err);
+            }
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = form.name.value.trim();
+            var email = form.email.value.trim();
+            var phone = form.phone.value.trim();
+            var project = form.project.value;
+            var message = form.message.value.trim();
+            if (!name || !email || !message) {
+                alert('Please provide your name, email and a short message.');
+                return;
+            }
+
+            var data = {
+                name: name,
+                email: email,
+                phone: phone || '',
+                projectType: project || '',
+                requirements: message,
+                budget: '',
+                createdAt: (window.firebase && firebase && firebase.firestore) ? firebase.firestore.FieldValue.serverTimestamp() : new Date().toISOString()
+            };
+
+            // Try to save to Firestore; fall back to localStorage
+            if (window.firebaseAuthReady) {
+                window.firebaseAuthReady
+                    .then(function () {
+                        if (window.db && window.db.collection) {
+                            window.db.collection('consultations').add(data)
+                                .then(function () {
+                                    console.log('Saved consultation to Firestore');
+                                })
+                                .catch(function (err) {
+                                    console.error('Firestore save failed, saving locally:', err);
+                                    saveLocally(data);
+                                });
+                        } else {
+                            saveLocally(data);
+                        }
+                    })
+                    .catch(function () {
+                        saveLocally(data);
+                    });
+            } else {
+                saveLocally(data);
+            }
+
+            // Open mail client as well
+            var subject = 'Website enquiry from ' + name;
+            var body = 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nProject: ' + project + '\n\nMessage:\n' + message;
+            var mailto = 'mailto:impactinteriors04@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            window.location.href = mailto;
+
+            form.reset();
+            var success = document.getElementById('contactSuccess');
+            if (success) {
+                success.style.display = 'block';
+                setTimeout(function () { success.style.display = 'none'; }, 5000);
+            }
+        });
+    });
+    </script>
+
+    <div class="floating-contact" aria-label="Floating contact buttons">
+        <a href="https://wa.me/919035790433" target="_blank" rel="noopener" class="contact-btn whatsapp" aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919035790433" class="contact-btn phone" aria-label="Call us">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+</body>
+</html>

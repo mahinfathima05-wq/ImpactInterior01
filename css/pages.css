@@ -1,0 +1,95 @@
+body.page-layout{
+    background:#f9f6f1;
+    color:#333;
+}
+
+.page-hero{
+    padding:140px 8% 80px;
+    background:linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url('../image/living-room.jpg');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.page-hero-content{
+    max-width:800px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.page-hero h1{
+    font-size:48px;
+    margin:20px 0;
+    line-height:1.2;
+}
+
+.page-hero p{
+    color:#f4f4f4;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.page-section{
+    padding:80px 8%;
+}
+
+.page-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.page-card{
+    display:block;
+    background:white;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-decoration:none;
+    color:inherit;
+    cursor:pointer;
+}
+
+.page-card h3{
+    color:#333;
+    margin:15px 0 10px;
+}
+
+.page-card p{
+    color:#666;
+    line-height:1.8;
+}
+
+.page-card i{
+    color:#D4AF37;
+    font-size:36px;
+}
+
+.page-cta{
+    text-align:center;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+    .page-hero{
+        padding:120px 6% 60px;
+    }
+
+    .page-hero h1{
+        font-size:32px;
+    }
+
+    .page-hero p{
+        font-size:16px;
+    }
+
+    .page-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .page-card{
+        padding:24px;
+    }
+}

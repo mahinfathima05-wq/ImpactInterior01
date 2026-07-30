@@ -1,0 +1,36 @@
+/* STATISTICS */
+.stats .stat-card{
+    text-align:center;
+    color:white;
+}
+.stats .stat-card i{
+    font-size:50px;
+    color:#D4AF37;
+    margin-bottom:20px;
+}
+.stats .stat-card h2{
+    font-size:55px;
+    margin-bottom:10px;
+}
+.stats .stat-card p{
+    font-size:18px;
+    color:#f5f5f5;
+}
+    color:white;
+}
+
+.stat-card i{
+    font-size:50px;
+    color:#D4AF37;
+    margin-bottom:20px;
+}
+
+.stat-card h2{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    font-size:18px;
+    color:#f5f5f5;
+}
